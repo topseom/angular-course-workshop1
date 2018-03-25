@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button mat-button>
+    <h1>Angular Course Basic</h1>
+  </button>
+</mat-toolbar>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" fxFlex="90" fxLayout="column">
+    <div fxFlex style="text-align:center;">
+        <h1>Workshop1</h1>
+        <p>this is first workshop!</p>
+    </div>
+    <mat-form-field fxFlex>
+      <input formControlName="number" type="number" placeholder="Enter Number" matInput >
+    </mat-form-field>
+    <mat-radio-group formControlName="type" style="padding-bottom:16px" fxLayout="row">
+        <mat-radio-button [value]="'income'" fxFlex>
+            income
+        </mat-radio-button>
+        <mat-radio-button [value]="'expense'" fxFlex>
+            expense
+        </mat-radio-button>
+    </mat-radio-group>
+    <button [disabled]="form.invalid" type="submit" mat-raised-button color="accent">Submit</button>
+    <h4>Balance : {{ balance }}</h4>
+  </form>
+</div>
+
